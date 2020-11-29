@@ -52,6 +52,8 @@ public class HibernateGenericDao<PK extends Serializable, T> implements IDao<PK,
 			
 			id = (PK) s.save(o); 			
 			
+			System.out.println("tx="+tx);
+			
 			tx.commit();
 
 		} catch (HibernateException e) {
