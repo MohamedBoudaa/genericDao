@@ -35,13 +35,6 @@ public class HibernateGenericDao<PK extends Serializable, T> implements IDao<PK,
 		this.boClass = boClass;
 
 	}
-
-	public SessionFactory getSf() {
-		return sf;
-	}
-	
-	
-
 	
 	public PK save(T o) {
 		LOGGER.debug("start save method");
