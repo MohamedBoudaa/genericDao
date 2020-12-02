@@ -10,10 +10,10 @@ import javax.persistence.criteria.Root;
 
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 public class HibernateGenericDao<PK extends Serializable, T> implements IDao<PK, T> {
 
@@ -54,6 +54,8 @@ public class HibernateGenericDao<PK extends Serializable, T> implements IDao<PK,
 			tx =  s.beginTransaction();
 			
 			id = (PK) s.save(o); 			
+			
+			System.out.println("tx="+tx);
 			
 			tx.commit();
 
