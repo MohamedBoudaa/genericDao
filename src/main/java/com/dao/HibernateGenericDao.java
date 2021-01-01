@@ -17,7 +17,7 @@ import org.hibernate.query.Query;
 
 public class HibernateGenericDao<PK extends Serializable, T> implements IDao<PK, T> {
 
-	private SessionFactory sf;
+	protected SessionFactory sf;
 	
 	private Class boClass;
 
